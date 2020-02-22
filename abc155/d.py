@@ -1,6 +1,7 @@
 import numpy as np
 from sys import stdin
 
+# not AC
 def get_result(data):
     N, K = data[0]
     A = data[1]
