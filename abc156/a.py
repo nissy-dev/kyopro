@@ -3,10 +3,7 @@ from sys import stdin
 
 def get_result(data):
     N, R = data
-    if N < 10:
-        return R + 100 * (10 - N)
-    
-    return R
+    return R if R >= 10 else R + 100 * (10 - N)
 
 if __name__ == '__main__':
     data = list(map(int, stdin.readline().split(' ')))

@@ -51,9 +51,13 @@ D, Eがどっちか解けるまで精進する...
     - https://qiita.com/c-yan/items/cb843ad3ba9a5009ad51#abc155e---payment
     - ちゃんと考察すればわかりそう
 
-# ABC 156
-急いで出したら、WAだらけだった...
+## ABC 156
+急いで出したら、WAだらけだった...  
+CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
 
+- B問題
+  - 10進数 -> n進数の変換
+  - nで割っていき、その余りをつなげる
 - D問題
   - n_C_kの計算の高速化まではわかった
     - 2**n - n_C_a - n_C_b - 1 まではいけた
