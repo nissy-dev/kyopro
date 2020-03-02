@@ -1,0 +1,21 @@
+
+[AtCoder]
+  ContestID = "abc157"
+  ContestURL = "https://atcoder.jp/contests/abc157"
+  TaskID = "abc157_d"
+  TaskName = "D - Friend Suggestions"
+  TaskURL = "https://atcoder.jp/contests/abc157/tasks/abc157_d"
+
+[Environment]
+  BuildCmd = ""
+  BuildCmdOnDocker = ""
+  CleanCmd = ""
+  Cmd = "python3 -B main.py"
+  CmdOnDocker = "python3 -B main.py"
+  DockerImage = "docker.io/library/python:3.4.3-slim"
+  Key = "python3"
+  Language = "Python3 (3.4.3)"
+  LanguageCode = "3023"
+  Note = ""
+  SrcName = "main.py"
+  Template = "internal/python3/main.py"

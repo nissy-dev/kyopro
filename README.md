@@ -2,6 +2,10 @@
 
 D, Eがどっちか解けるまで精進する...
 
+
+## ABC 157
+酷すぎた...
+
 ## ABC 156
 急いで出したら、WAだらけだった...  
 CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
