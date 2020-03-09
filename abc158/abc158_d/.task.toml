@@ -1,0 +1,21 @@
+
+[AtCoder]
+  ContestID = "abc158"
+  ContestURL = "https://atcoder.jp/contests/abc158"
+  TaskID = "abc158_d"
+  TaskName = "D - String Formation"
+  TaskURL = "https://atcoder.jp/contests/abc158/tasks/abc158_d"
+
+[Environment]
+  BuildCmd = ""
+  BuildCmdOnDocker = ""
+  CleanCmd = ""
+  Cmd = "python3 -B main.py"
+  CmdOnDocker = "python3 -B main.py"
+  DockerImage = "docker.io/library/python:3.4.3-slim"
+  Key = "python3"
+  Language = "Python3 (3.4.3)"
+  LanguageCode = "3023"
+  Note = ""
+  SrcName = "main.py"
+  Template = "internal/python3/main.py"

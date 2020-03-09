@@ -16,9 +16,16 @@ CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
 - D問題
   - n_C_kの計算の高速化まではわかった
     - 2**n - n_C_a - n_C_b - 1 まではいけた
+    - そのまま使える
+      - http://wakabame.hatenablog.com/entry/2017/09/21/211357
   - コンペ中の理解は諦めた...
-    - pypyで出したけど、TLE...appendが遅すぎる...?
-    - https://drken1215.hatenablog.com/entry/2018/06/08/210000
+- E問題
+  - 普通に考察問題だった
+    - 数え上げの条件を正確に掴むのがポイント
+    - xHy = x+y−1Cx−1 (忘れていた)
+  - 数え上げさえ分かれば、あとはnCkやnHkを計算するだけ
+  - https://img.atcoder.jp/abc156/editorial.pdf
+  - https://drken1215.hatenablog.com/entry/2018/06/08/210000
 
 ## ABC 155
 
