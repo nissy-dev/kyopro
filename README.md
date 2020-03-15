@@ -1,41 +1,46 @@
 # kyopro
 
-D, Eがどっちか解けるまで精進する...
-
+D, E がどっちか解けるまで精進する...
 
 ## ABC 157
+
 酷すぎた...
 
-## ABC 156
-急いで出したら、WAだらけだった...  
-CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
+- D 問題
+  - Union Find を使う問題
+  - グラフ問題面白い
 
-- B問題
-  - 10進数 -> n進数の変換
-  - nで割っていき、その余りをつなげる
-- D問題
-  - n_C_kの計算の高速化まではわかった
-    - 2**n - n_C_a - n_C_b - 1 まではいけた
+## ABC 156
+
+急いで出したら、WA だらけだった...  
+CLI 出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
+
+- B 問題
+  - 10 進数 -> n 進数の変換
+  - n で割っていき、その余りをつなげる
+- D 問題
+  - n_C_k の計算の高速化まではわかった
+    - 2\*\*n - n_C_a - n_C_b - 1 まではいけた
     - そのまま使える
       - http://wakabame.hatenablog.com/entry/2017/09/21/211357
   - コンペ中の理解は諦めた...
-- E問題
+- E 問題
   - 普通に考察問題だった
     - 数え上げの条件を正確に掴むのがポイント
     - xHy = x+y−1Cx−1 (忘れていた)
-  - 数え上げさえ分かれば、あとはnCkやnHkを計算するだけ
+  - 数え上げさえ分かれば、あとは nCk や nHk を計算するだけ
   - https://img.atcoder.jp/abc156/editorial.pdf
   - https://drken1215.hatenablog.com/entry/2018/06/08/210000
 
 ## ABC 155
 
-- D問題
-  - Eより難しいらしい...
+- D 問題
+  - E より難しいらしい...
   - 類題がある : https://atcoder.jp/contests/abc149/tasks/abc149_e
     - https://tt-conpetitive.hatenablog.com/entry/2020/01/03/221433
     - 類題をみると 二分探索 + 累積和 の知識が必要という感じ
   - 解説読んでもピント来ないので今回はパス
-- 前回に引き続き桁dpとかいうやつ (E問題)
+- 前回に引き続き桁 dp とかいうやつ (E 問題)
   - 今回は制約がかなり大きいので再帰は通らない
     - メモ化してもきついものはきつい...
   - 解説の通りにすれば良い
@@ -44,14 +49,14 @@ CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
 
 ## ABC 154
 
-- 入出力でハマった (B問題)
+- 入出力でハマった (B 問題)
   - 問題は改行コードだった
-  - 標準入力のenterは改行になる
+  - 標準入力の enter は改行になる
   - int 関数は改行文字を処理する
-- 区間和は累積和で前処理すると早い (D問題)
+- 区間和は累積和で前処理すると早い (D 問題)
   - https://qiita.com/drken/items/56a6b68edef8fc605821
   - これは実務でも役立ちそう
-- 桁dpとかいうやつ (E問題)
+- 桁 dp とかいうやつ (E 問題)
   - 制約がバカみたいにでかい (それ気になった...)
   - メモ化再帰で書いた方がわかりやすかった
     - 計算量はかかるし、メモリ効率も悪いからいつも使えるとは限らない
@@ -65,13 +70,13 @@ CLI出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
   - https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0
   - 実用上の多くの場面では、n=10^5 ~ 10^7 付近のデータを扱うケースが多い
   - O(n^2) なアルゴリズムを O(nlogn) に改善できるかどうかが鍵
-- ソートの計算量 (B問題)
+- ソートの計算量 (B 問題)
   - https://qiita.com/drken/items/44c60118ab3703f7727f
   - ソートの最悪計算量の最小が O(nlogn)
   - マージソートとクイックソートが有名...?
-- DPの計算 (D問題)
+- DP の計算 (D 問題)
   - https://qiita.com/drken/items/a5e6fe22863b7992efdb
   - 自分は典型的なハマり方をしたっぽい
   - http://wakabame.hatenablog.com/entry/2017/09/10/211428
-  - DPはテーブルを埋めていくイメージ
+  - DP はテーブルを埋めていくイメージ
   - 難しい...完全に慣れな予感がする
