@@ -24,7 +24,6 @@ def get_result(data):
     return '-1'
 
 
-
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]
     data = [list(map(int, val.split(' '))) for val in raw_data]

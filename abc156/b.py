@@ -14,6 +14,7 @@ def get_result(data):
     N, K = data[0]
     return len(Base_10_to_n(N, K))
 
+
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]
     data = [list(map(int, val.split(' '))) for val in raw_data]

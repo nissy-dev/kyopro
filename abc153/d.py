@@ -1,11 +1,11 @@
-import math
+import math  # noqa
 from sys import stdin
 
 
 def get_result(data):
     cnt = 0
     quotient = data
-    ## cntはlog2で計算できる
+    # cntはlog2で計算できる
     # cnt = math.ceil(math.log2(data))
     while quotient > 1:
         quotient = quotient // 2

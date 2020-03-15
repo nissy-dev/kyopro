@@ -9,14 +9,15 @@ def get_result(data):
     # 累積和を算出 (最初は0)
     e_cumsum = [0]
     for i in range(N):
-      e_cumsum.append(e_cumsum[i] + e_val[i])
+        e_cumsum.append(e_cumsum[i] + e_val[i])
 
     # 隣接するK個の部分和を取得
     e_sum_k = []
     for i in range(N+1-K):
-      e_sum_k.append(e_cumsum[i+K] - e_cumsum[i])
+        e_sum_k.append(e_cumsum[i+K] - e_cumsum[i])
 
     return max(e_sum_k)
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]

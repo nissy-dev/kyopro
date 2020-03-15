@@ -1,7 +1,7 @@
 from sys import stdin
 
 
-## This code doesn't pass the test
+# This code doesn't pass the test
 # def get_result(data):
 #     H, N = data[0]
 #     A_and_B = np.array(data[1:])
@@ -24,7 +24,7 @@ from sys import stdin
 
 #     return cost
 
-## 答え (DP, ナップザック問題の典型らしい)
+# 答え (DP, ナップザック問題の典型らしい)
 # pythonだとTLEになる, pypyでAC (pypyはnumpy使えない)
 # 自分の解法は典型的なハマり方をしたっぽい
 
@@ -45,7 +45,7 @@ def get_result(data):
     # 普通は、dp[i][j] = i番目までを使って Aの和が j の時の最小コスト
     inf = float("inf")
     # 長さ H (制約条件) のテーブルを作成
-    dp =[inf for _ in range(H+1)]
+    dp = [inf for _ in range(H+1)]
     # 初期値
     dp[0] = 0
 
@@ -60,6 +60,7 @@ def get_result(data):
                 dp[i+1] = min(dp[i+1], dp[i+1-A[j]] + B[j])
 
     return dp[H]
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]

@@ -17,9 +17,10 @@ def get_result(data):
     for i in range(3):
         tmp.append(sum(A[:, i]))
         tmp.append(sum(A[i, :]))
-    tmp.append(A[0,0] + A[1,1] + A[2,2])
-    tmp.append(A[0,2] + A[1,1] + A[2,0])
+    tmp.append(A[0, 0] + A[1, 1] + A[2, 2])
+    tmp.append(A[0, 2] + A[1, 1] + A[2, 0])
     return 'Yes' if 3.0 in tmp else 'No'
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]

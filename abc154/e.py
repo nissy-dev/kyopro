@@ -1,6 +1,7 @@
 from sys import stdin
 from functools import lru_cache
 
+
 @lru_cache(None)
 def solver(N, K):
     """N以下で0でないものがちょうどK個。0を含める"""
@@ -11,7 +12,7 @@ def solver(N, K):
             return N
         return 0
     # divmod : 商と余りを両方取れる
-    m, r = divmod(N,10)
+    m, r = divmod(N, 10)
     ans = 0
     if K >= 1:
         # 1の位が not 0

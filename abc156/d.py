@@ -14,9 +14,10 @@ def comb_mod(n, a, mod=10**9+7):
 def get_result(data):
     n, a, b = data[0]
     mod = 10**9+7
-    out = pow(2, n, mod) - comb_mod(n, a, mod) - comb_mod(n, b, mod) - 1 
+    out = pow(2, n, mod) - comb_mod(n, a, mod) - comb_mod(n, b, mod) - 1
     out %= mod
     return out
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]

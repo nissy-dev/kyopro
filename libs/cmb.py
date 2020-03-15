@@ -1,4 +1,13 @@
-from sys import stdin
+from functools import reduce
+
+
+def comb_mod(n, a, mod=10**9+7):
+    # https://img.atcoder.jp/abc156/editorial.pdf
+    # nCk は, k回の積で計算できる
+    num = reduce(lambda x, y: x * y % mod, range(n, n - a, -1))
+    den = reduce(lambda x, y: x * y % mod, range(1, a + 1))
+    # nCk mod = X/Y mod = X * Y^(10**9+7-2) mod
+    return num * pow(den, mod - 2, mod) % mod
 
 
 def prepare(n, p):
@@ -17,22 +26,3 @@ def cmb(n, r, p, fact, factinv):
         return 0
     r = min(r, n - r)
     return fact[n] * factinv[r] * factinv[n-r] % p
-
-
-def get_result(data):
-    n, k = data
-    mod = 10**9+7
-    fact, factinv = prepare(n, mod)
-    ans = 0
-    for m in range(n):
-        # xHy = x+y−1Cx−1
-        if m <= k:
-            ans += (cmb(n, m, mod, fact, factinv) * cmb(n-1, n-m-1, mod, fact, factinv)) % mod
-    ans %= mod
-    return ans
-
-
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().split(' ')))
-    result = get_result(data)
-    print(result)

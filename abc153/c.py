@@ -6,6 +6,7 @@ def get_result(data):
     H = sorted(data[1])
     return 0 if N <= K else sum(H[0:(N-K)])
 
+
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]
     data = [list(map(int, val.split(' '))) for val in raw_data]

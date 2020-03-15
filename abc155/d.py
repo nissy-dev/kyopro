@@ -1,6 +1,7 @@
 import numpy as np
 from sys import stdin
 
+
 # not AC
 def get_result(data):
     N, K = data[0]
@@ -14,6 +15,7 @@ def get_result(data):
             idx += 1
     output = sorted(output)
     return output[K-1]
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]
