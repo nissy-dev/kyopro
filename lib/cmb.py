@@ -1,7 +1,7 @@
 from functools import reduce
 
 
-def comb_mod(n, a, mod=10**9+7):
+def cmb_mod(n, a, mod=10**9+7):
     # https://img.atcoder.jp/abc156/editorial.pdf
     # nCk は, k回の積で計算できる
     num = reduce(lambda x, y: x * y % mod, range(n, n - a, -1))
@@ -10,7 +10,7 @@ def comb_mod(n, a, mod=10**9+7):
     return num * pow(den, mod - 2, mod) % mod
 
 
-def prepare(n, p):
+def prepare_cmb(n, p):
     fact = [1, 1]  # fact[n] = (n! mod p)
     factinv = [1, 1]  # factinv[n] = ((n!)^(-1) mod p)
     inv = [0, 1]  # factinv 計算用
@@ -21,6 +21,7 @@ def prepare(n, p):
     return fact, factinv
 
 
+# 1≤k≤n≤10^7 で使える
 def cmb(n, r, p, fact, factinv):
     if (r < 0) or (n < r):
         return 0
