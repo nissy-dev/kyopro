@@ -33,10 +33,10 @@ class PriorityQueue():
             child_right = self.list[child_right_index]
             if self.list[index] > min(child_left, child_right):
                 if child_left < child_right:
-                    swap(self.list, index, child_left_index)
+                    self.list = swap(self.list, index, child_left_index)
                     index = child_left_index 
                 else:
-                    self.list =swap(self.list, index, child_right_index)
+                    self.list = swap(self.list, index, child_right_index)
                     index = child_right_index
 
     def pop_min(self):
