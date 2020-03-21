@@ -1,6 +1,6 @@
 # アルゴリズムのメモ
 
-https://algo-logic.info/
+https://algo-logic.info/beginner/
 
 ## ソート
 
@@ -91,18 +91,24 @@ def insertion_sort(arr):
 
 ```
 import random
-def partition(arr, l, r): # 左右から探索して配列を分割
-  pivot = random.choice(arr) # 配列からランダムにピボットを選ぶ
+
+# 左右から探索して配列を分割
+def partition(arr, l, r):
+  # 配列からランダムにピボットを選ぶ
+  pivot = random.choice(arr)
   left = l
   right = r
   while left < right:
-    while(left<=r and arr[left] < pivot): # left<=r が無いとleftがrを超えて配列外の領域を参照する可能性があります
+    # left<=r が無いとleftがrを超えて配列外の領域を参照する可能性があります
+    while(left<=r and arr[left] < pivot):
       left+=1
-    while(l<=right and arr[right] >= pivot):　# l<=right が無いとrightがlを超えて配列外の領域を参照する可能性があります
+    # l<=right が無いとrightがlを超えて配列外の領域を参照する可能性があります
+    while(l<=right and arr[right] >= pivot):
       right-=1
     if(left<right):
       arr[left],arr[right] = arr[right],arr[left]
-  return left # 右側(ピボット以上の領域)の先頭のindexを出力
+  # 右側(ピボット以上の領域)の先頭のindexを出力
+  return left
 
 def quick_sort(arr, l, r):
   if l<r:
@@ -113,7 +119,40 @@ def quick_sort(arr, l, r):
 
 ## 探索
 
+### 二分探索 (Binary Search)
+
+### 深さ優先探索 (Depth First Search)
+
+### 幅優先探索 (Breadth First Search)
+
 ## データ構造
+
+### 基本的なデータ構造
+
+- Stack
+  - 最後に格納したデータが最初に出てくるようなデータ構造
+  - Last In First Out
+- Queue
+  - 最初に格納したデータが最初に出てくるようなデータ構造
+  - First In First Out
+  - collections モジュールにある deque というクラス が高速なアクセスに対応
+- Set
+  - **要素の挿入・削除・検索を高速に行うことができる特徴を持つ**
+  - 順序依存しない・重複も許さない
+- 配列/連想配列/Set の違い
+  - 配列はデータの位置を使ってデータを取得するが、連想配列は key を利用して取得 (key は set の形で保持する)
+  - Set と連想配列の違いは、連想配列のケースは key に値が紐付いている点
+
+**Python における Queue と List の違い**
+
+> Deque はどちらの側からも append と pop が可能で、スレッドセーフでメモリ効率がよく、どちらの方向からもおよそ O(1) のパフォーマンスで実行できます。list オブジェクトでも同様の操作を実現できますが、これは高速な固定長の操作に特化されており、内部のデータ表現形式のサイズと位置を両方変えるような pop(0) や insert(0, v) などの操作ではメモリ移動のために O(n) のコストを必要とします
+
+### 優先度付きキュー (Priority Queue)
+
+- リスト内の最大値・最小値の検索がかなり高速にできる (O(logN), 普通は O(N))
+- ヒープという木構造を使って実装されている
+  - ヒープの解説 : https://yottagin.com/?p=8706
+  - max heap であれば「親が子より常に大きい」、min heap であれば「親が子より常に小さい」 という制約を満たす木構造のこと
 
 ### Union Find
 
