@@ -123,13 +123,43 @@ def quick_sort(arr, l, r):
 
 ### 重みなしグラフの経路探索
 
+記事 (実装がわかりやすいもの, C++):  
+http://yamagensakam.hatenablog.com/entry/2018/09/15/094504
+
+問題例 (DFS, BFS は基本どちらも同じタスクに適応できる)
+
+- A から B への経路の存在確認
+- A から B への最短経路の算出
+- 二部グラフ判定
+  - 二部グラフ : https://ja.wikipedia.org/wiki/2%E9%83%A8%E3%82%B0%E3%83%A9%E3%83%95
+- トポロジカルソート
+  - タスク間に依存関係がある場合、どんな順番でタスクをこなせば良いかを決めるのに役立つ
+  - https://ikatakos.com/pot/programming_algorithm/graph_theory/topological_sort
+- サイクル検出
+
 #### 深さ優先探索 (Depth First Search)
+
+[アルゴリズムロジック 深さ優先探索(Depth First Search)の基本](https://algo-logic.info/dfs/?customize_changeset_uuid=d5d704d5-3408-4126-9339-847efd308030&customize_autosaved=on)  
+[DFS (深さ優先探索) 超入門！ 〜 グラフ・アルゴリズムの世界への入口 〜【前編】](https://qiita.com/drken/items/4a7869c5e304883f539b)  
+[DFS (深さ優先探索) 超入門！ 〜 グラフ・アルゴリズムの世界への入口 〜【後編】](https://qiita.com/drken/items/a803d4fc4a727e02f7ba)
+
+- 計算量 O(V+E)
+- Stack を使って実装されている
+- 探索イメージ :
+- 得意なタスク
+  - 与えられたコスト以内でたどり着ける頂点の列挙
 
 #### 幅優先探索 (Breadth First Search)
 
-- A から B への経路の存在確認や A から B への最短経路の算出に利用される
-- 重みなしグラフで有効
+[アルゴリズムロジック 幅優先探索(Breadth First Search)の基本](https://algo-logic.info/bfs/?customize_changeset_uuid=d5d704d5-3408-4126-9339-847efd308030&customize_autosaved=on)  
+[BFS (幅優先探索) 超入門！ 〜 キューを鮮やかに使いこなす 〜](https://qiita.com/drken/items/996d80bcae64649a6580)
+
 - 計算量 O(V+E)
+- Queue を使って実装されている
+- メモリを比較的多く使う
+- 探索イメージ : https://qiita.com/drken/items/996d80bcae64649a6580#1-1-bfs-%E3%81%AE%E5%8B%95%E4%BD%9C
+- 得意なタスク
+  - 迷路などの最短経路探索
 
 ### 重みありグラフの経路探索
 
@@ -176,6 +206,8 @@ def quick_sort(arr, l, r):
   - max heap であれば「親が子より常に大きい」、min heap であれば「親が子より常に小さい」 という制約を満たす木構造のこと
 
 ### Union Find
+
+[アルゴリズムロジック Union-Find Tree を理解する！素集合系を扱うデータ構造](https://algo-logic.info/union-find-tree/?customize_changeset_uuid=d5d704d5-3408-4126-9339-847efd308030&customize_autosaved=on)
 
 - データを互いに素な集合(素集合系)にして管理するためのデータ構造
 - 木(集合)同士の併合や、同じ集合に含まれているかの判定は高速にできる
