@@ -1,20 +1,19 @@
-from sys import stdin
-from collections import deque
-
-
 # 重みなしグラフの隣接リスト
 # 0-indexed nodes
 def get_adj_list(num_nodes, data, undirected=True):
     graph = [[] for _ in range(num_nodes)]
     for val in data:
         x, y = val
-        graph[x-1].append(y-1)
+        graph[x].append(y)
         if undirected:
-            graph[y-1].append(x-1)
+            graph[y].append(x)
     return graph
 
 
-# BFS
+from collections import deque
+
+
+# BFS depth = distance
 def breadth_first_search(adj_list, start_node):
     N = len(adj_list)
     order = [-1] * N # a bfs ordering of each vertex
@@ -31,23 +30,3 @@ def breadth_first_search(adj_list, start_node):
                 if order[u] >= 0: continue
                 q.append((u, v, d+1))
     return order, parent, depth
-
-
-# BFS pypyでAC
-def get_result(data):
-    N, X, Y = data
-    _data = [[i, i+1] for i in range(1, N)]
-    _data += [[X, Y]]
-    adj_list = get_adj_list(N, _data)
-    dist_cnt = [0 for i in range(N)]
-    for i in range(N):
-        _, _, depth = breadth_first_search(adj_list, i)
-        for j in range(i, N):
-            dist_cnt[depth[j]] += 1
-    for i in range(1, N):
-        print(dist_cnt[i])
-
-
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip('\n').split(' ')))
-    get_result(data)
