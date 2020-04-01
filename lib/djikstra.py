@@ -1,4 +1,3 @@
-from sys import stdin
 from heapq import heappush, heappop
 
 
@@ -36,24 +35,11 @@ class Dijkstra:
                     self.prev[dest] = src
         return self.dist
 
-
-# BFS pypyでAC
-def get_result(data):
-    N, X, Y = data
-    _data = [[i, i+1] for i in range(1, N)]
-    _data += [[X, Y]]
-    solver = Dijkstra(N)
-    for val in _data:
-        solver.add_edge(val[0]-1, val[1]-1, undirected=True)
-    dist_cnt = [0 for i in range(N)]
-    for i in range(N):
-        dist = solver.distance(i)
-        for j in range(i, N):
-            dist_cnt[dist[j]] += 1
-    for i in range(1, N):
-        print(dist_cnt[i])
-
-
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip('\n').split(' ')))
-    get_result(data)
+    def shortest_path(self, goal):
+        path = [goal]
+        dest = goal
+        # 終点から最短経路を逆順に辿る
+        while self.prev[dest] != float('inf'):
+            path.append(self.prev[dest])
+            dest = self.prev[dest]
+        return path[::-1]
