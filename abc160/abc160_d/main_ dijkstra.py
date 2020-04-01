@@ -8,7 +8,7 @@ class Dijkstra:
         self.adj_list = [[] for _ in range(self.n)]
 
     # Edge数分回すことを想定
-    def add_edge(self, start, end, weight=1, undirected=True):
+    def add_edge(self, start, end, weight=1, undirected=False):
         self.adj_list[start].append((end, weight))
         if undirected:
             self.adj_list[end].append((start, weight))
@@ -37,7 +37,7 @@ class Dijkstra:
         return self.dist
 
 
-# BFS pypyでAC
+# Dijkstra pypyでAC
 def get_result(data):
     N, X, Y = data
     _data = [[i, i+1] for i in range(1, N)]

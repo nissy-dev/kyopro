@@ -12,7 +12,7 @@
 
 # from collections import deque
 
-# # DFS 
+# # DFS
 # # preorder: 頂点に初めてたどり着いた時刻
 # # preorder: ある頂点の隣接する頂点を最後に隣接リストから削除する時刻
 # def depth_first_search(adj_list, start_node):

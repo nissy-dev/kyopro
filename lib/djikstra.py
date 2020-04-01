@@ -7,7 +7,7 @@ class Dijkstra:
         self.adj_list = [[] for _ in range(self.n)]
 
     # Edge数分回すことを想定
-    def add_edge(self, start, end, weight=1, undirected=True):
+    def add_edge(self, start, end, weight=1, undirected=False):
         self.adj_list[start].append((end, weight))
         if undirected:
             self.adj_list[end].append((start, weight))
