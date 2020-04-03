@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 # 解説のコード
 def get_result(data):
     N, X, Y = data

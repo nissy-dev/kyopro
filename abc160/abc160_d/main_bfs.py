@@ -15,18 +15,21 @@ class BreadthFirstSearch:
 
     # depth = distance
     def search(self, start_node):
-        order = [-1] * self.n # a bfs ordering of each vertex
-        parent = [-1] * self.n # parent of each vertex in the bfs search tree
-        depth = [-1] * self.n # the depth of each vertex
-        q = deque([(start_node, -1, 0)]) # (vertex, parent, depth)
-        num = 0 # current ordering
+        order = [-1] * self.n  # a bfs ordering of each vertex
+        parent = [-1] * self.n  # parent of each vertex in the bfs search tree
+        depth = [-1] * self.n  # the depth of each vertex
+        q = deque([(start_node, -1, 0)])  # (vertex, parent, depth)
+        num = 0  # current ordering
         while len(q) > 0:
             v, p, d = q.popleft()
-            if order[v] < 0: # visited v for the first time
-                order[v] = num; parent[v] = p; depth[v] = d
+            if order[v] < 0:  # visited v for the first time
+                order[v] = num
+                parent[v] = p
+                depth[v] = d
                 num += 1
                 for u in self.graph[v]:
-                    if order[u] >= 0: continue
+                    if order[u] >= 0:
+                        continue
                     q.append((u, v, d+1))
         return order, parent, depth
 

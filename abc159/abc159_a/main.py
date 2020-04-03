@@ -3,7 +3,7 @@ from sys import stdin
 
 def get_result(data):
     N, M = data
-    ans = N * (N-1) / 2 + M * (M-1) / 2 
+    ans = N * (N-1) / 2 + M * (M-1) / 2
     return int(ans)
 
 

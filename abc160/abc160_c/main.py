@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 def get_result(data):
     K, N = data[0]
     A = data[1]

@@ -22,7 +22,7 @@ class Dijkstra:
         q = []
         heappush(q, (start, 0))
         while len(q) != 0:
-            src, prov_cost  = heappop(q)
+            src, prov_cost = heappop(q)
             # プライオリティキューに格納されている最短距離が, 現在計算できている最短距離より大きければ，distの更新をする必要はない
             if self.dist[src] < prov_cost:
                 continue
@@ -30,8 +30,8 @@ class Dijkstra:
             for val in self.adj_list[src]:
                 dest, cost = val
                 if self.dist[dest] > self.dist[src] + cost:
-                    self.dist[dest] = self.dist[src] + cost # distの更新
-                    heappush(q, (dest, self.dist[dest])) # キューに新たな仮の距離の情報をpush
+                    self.dist[dest] = self.dist[src] + cost  # distの更新
+                    heappush(q, (dest, self.dist[dest]))  # キューに新たな仮の距離の情報をpush
                     self.prev[dest] = src
         return self.dist
 

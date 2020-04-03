@@ -1,6 +1,7 @@
-def swap(arr, i , j):
+def swap(arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
     return arr
+
 
 class PriorityQueue():
     def __init__(self, arr):
@@ -13,7 +14,7 @@ class PriorityQueue():
         # 親のindexは、(index - 1) // 2
         # 親が小さくなるように入れ替えを繰り返す
         while index != 0 and self.list[index] < self.list[(index - 1) // 2]:
-            self.list = swap(self.list, index, (index -1)//2)
+            self.list = swap(self.list, index, (index - 1)//2)
             index = (index-1)//2
 
     def insert(self, item):
@@ -34,7 +35,7 @@ class PriorityQueue():
             if self.list[index] > min(child_left, child_right):
                 if child_left < child_right:
                     self.list = swap(self.list, index, child_left_index)
-                    index = child_left_index 
+                    index = child_left_index
                 else:
                     self.list = swap(self.list, index, child_right_index)
                     index = child_right_index
@@ -45,6 +46,6 @@ class PriorityQueue():
 
         min_val = self.list[0]
         # 最後の要素を先頭に持ってくる
-        self.list[0] = self.list.pop(-1) 
+        self.list[0] = self.list.pop(-1)
         self.percolate_down()
         return min_val
