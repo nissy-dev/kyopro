@@ -1,4 +1,3 @@
-import numpy as np
 from sys import stdin
 
 
@@ -8,26 +7,24 @@ def show_result(data):
     for i in range(T):
         n = data[n_idx][0]
         origin_tasks = data[(n_idx+1):(n_idx+1+n)]
-        tasks = sorted(origin_tasks, key=lambda x: x[0])
-        sorted_idx = sorted([i for i in range(n)], key=lambda x: origin_tasks[x][0])
+        tasks = [origin_tasks[j] + [j] for j in range(n)]
+        tasks = sorted(tasks, key=lambda x: (x[0], x[1]))
         ans = []
-        j_flags = -1
-        c_flags = -1
-        for j in range(n):
-            if j_flags <= tasks[j][0]:
-                j_flags = tasks[j][1]
-                ans += 'C'
-            elif c_flags <= tasks[j][0]:
-                c_flags = tasks[j][1]
-                ans += 'J'
+        j_end = -1
+        c_end = -1
+        for k in range(n):
+            if c_end <= tasks[k][0]:
+                c_end = tasks[k][1]
+                ans.append(['C', tasks[k][2]])
+            elif j_end <= tasks[k][0]:
+                j_end = tasks[k][1]
+                ans.append(['J', tasks[k][2]])
             else:
                 ans = 'IMPOSSIBLE'
                 break
-        # check
-        if len(ans) != n:
-            ans = 'IMPOSSIBLE'
         if ans != 'IMPOSSIBLE':
-            ans = np.array(ans)[sorted_idx]
+            ans = sorted(ans, key=lambda x: x[1])
+            ans = [ans[l][0] for l in range(n)]
         print('Case #{}: {}'.format(i+1, ''.join(ans)))
         n_idx = n_idx + 1 + n
 
