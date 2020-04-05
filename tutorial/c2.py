@@ -11,7 +11,7 @@ def get_result(data):
 
 
 # 白昼夢
-def get_result(data):
+def get_result(data):  # noqa
     S = data[0]
     # 順番が大事
     words = ['eraser', 'erase', 'dreamer', 'dream']
@@ -24,4 +24,3 @@ if __name__ == '__main__':
     data = list(map(str, stdin.readline().rstrip('\n').split(' ')))
     result = get_result(data)
     print(result)
-

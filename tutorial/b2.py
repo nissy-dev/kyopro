@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 # Coins
 def get_result(data):
     # ただの全探索
@@ -12,6 +13,7 @@ def get_result(data):
                 if money == X:
                     count += 1
     return count
+
 
 if __name__ == '__main__':
     raw_data = [val.rstrip('\n') for val in stdin.readlines()]

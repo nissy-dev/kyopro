@@ -15,8 +15,8 @@ def get_result(data):
                 break
     return ans
 
+
 if __name__ == '__main__':
     data = list(map(int, stdin.readline().split(' ')))
     result = get_result(data)
     print(result)
-
