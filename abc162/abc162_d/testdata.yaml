@@ -1,0 +1,8 @@
+- in: |-
+    4
+    RRGB
+  exp: "1"
+- in: |-
+    39
+    RBRBGRBGGBBRRGBBRRRBGGBRBGBRBGBRBBBGBBB
+  exp: "1800"
