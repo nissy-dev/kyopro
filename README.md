@@ -9,6 +9,7 @@ D, E がどっちか解けるまで精進する...
     - https://drken1215.hatenablog.com/entry/2020/03/08/020200
   - 各桁の mod 計算を効率化する必要性があった
     - mod も桁がでかすぎると計算が遅くなる
+    - https://azapen6.hatenablog.com/entry/2013/12/31/235453
 
 ## ABC 163
 
