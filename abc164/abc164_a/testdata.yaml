@@ -1,0 +1,6 @@
+- in: 4 5
+  exp: unsafe
+- in: 100 2
+  exp: safe
+- in: 10 10
+  exp: unsafe

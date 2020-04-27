@@ -1,0 +1,21 @@
+- in: |-
+    3
+    apple
+    orange
+    apple
+  exp: "2"
+- in: |-
+    5
+    grape
+    grape
+    grape
+    grape
+    grape
+  exp: "1"
+- in: |-
+    4
+    aaaa
+    a
+    aaa
+    aa
+  exp: "4"
