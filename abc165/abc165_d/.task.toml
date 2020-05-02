@@ -1,0 +1,21 @@
+
+[AtCoder]
+  ContestID = "abc165"
+  ContestURL = "https://atcoder.jp/contests/abc165"
+  TaskID = "abc165_d"
+  TaskName = "D - Floor Function"
+  TaskURL = "https://atcoder.jp/contests/abc165/tasks/abc165_d"
+
+[Environment]
+  BuildCmd = ""
+  BuildCmdOnDocker = ""
+  CleanCmd = ""
+  Cmd = "python3 -B main.py"
+  CmdOnDocker = "python3 -B main.py"
+  DockerImage = "docker.io/library/python:3.4.3-slim"
+  Key = "python3"
+  Language = "Python3 (3.4.3)"
+  LanguageCode = "4006"
+  Note = ""
+  SrcName = "main.py"
+  Template = "internal/python3/main.py"
