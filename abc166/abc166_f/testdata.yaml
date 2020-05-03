@@ -1,0 +1,38 @@
+- in: |-
+    2 1 3 0
+    AB
+    AC
+  exp: |-
+    Yes
+    A
+    C
+- in: |-
+    3 1 0 0
+    AB
+    BC
+    AB
+  exp: "No"
+- in: |-
+    1 0 9 0
+    AC
+  exp: "No"
+- in: |-
+    8 6 9 1
+    AC
+    BC
+    AB
+    BC
+    AC
+    BC
+    AB
+    AB
+  exp: |-
+    Yes
+    C
+    B
+    B
+    C
+    C
+    B
+    A
+    A
