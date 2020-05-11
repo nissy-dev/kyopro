@@ -1,0 +1,21 @@
+
+[AtCoder]
+  ContestID = "abc167"
+  ContestURL = "https://atcoder.jp/contests/abc167"
+  TaskID = "abc167_c"
+  TaskName = "C - Skill Up"
+  TaskURL = "https://atcoder.jp/contests/abc167/tasks/abc167_c"
+
+[Environment]
+  BuildCmd = ""
+  BuildCmdOnDocker = ""
+  CleanCmd = ""
+  Cmd = "python3 -B main.py"
+  CmdOnDocker = "python3 -B main.py"
+  DockerImage = "docker.io/library/python:3.4.3-slim"
+  Key = "python3"
+  Language = "Python3 (3.4.3)"
+  LanguageCode = "4006"
+  Note = ""
+  SrcName = "main.py"
+  Template = "internal/python3/main.py"

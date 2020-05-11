@@ -1,0 +1,12 @@
+- in: |-
+    chokudai
+    chokudaiz
+  exp: "Yes"
+- in: |-
+    snuke
+    snekee
+  exp: "No"
+- in: |-
+    a
+    aa
+  exp: "Yes"
