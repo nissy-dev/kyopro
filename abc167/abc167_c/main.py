@@ -1,20 +1,24 @@
+import itertools
 from sys import stdin
 
 
 def get_result(data):
     N, M, X = data[0]
-    data = [[val[0], val[1:]] for val in data[1:]]
-    data = sorted(data, key=lambda x: (x[0], x[1]))
-    print(data)
-    sum_val = [0] * M
-    cost = 0
-    for val in data:
-        cost += val[0]
-        for i in range(M):
-            sum_val[i] += val[1][i]
-        if min(sum_val) >= X:
-            return cost
-    return -1
+    C_A = data[1:]
+    min_const = float('inf')
+    for bit in itertools.product([0, 1], repeat=N):
+        cost = 0
+        comp = [0] * M
+        for i, val in enumerate(bit):
+            if val == 1:
+                cost += C_A[i][0]
+                for j in range(M):
+                    comp[j] += C_A[i][j+1]
+
+        if min(comp) >= X and cost < min_const:
+            min_const = cost
+
+    return -1 if min_const == float('inf') else min_const
 
 
 if __name__ == '__main__':
