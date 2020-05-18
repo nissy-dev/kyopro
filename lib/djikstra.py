@@ -18,11 +18,11 @@ class Dijkstra:
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
-        # 各要素は，(頂点vのID, startからある頂点vまでの仮の距離)からなるタプル
+        # 各要素は，(startからある頂点vまでの仮の距離, 頂点からのID)からなるタプル
         q = []
-        heappush(q, (start, 0))
+        heappush(q, (0, start))
         while len(q) != 0:
-            src, prov_cost = heappop(q)
+            prov_cost, src = heappop(q)
             # プライオリティキューに格納されている最短距離が, 現在計算できている最短距離より大きければ，distの更新をする必要はない
             if self.dist[src] < prov_cost:
                 continue
@@ -31,7 +31,7 @@ class Dijkstra:
                 dest, cost = val
                 if self.dist[dest] > self.dist[src] + cost:
                     self.dist[dest] = self.dist[src] + cost  # distの更新
-                    heappush(q, (dest, self.dist[dest]))  # キューに新たな仮の距離の情報をpush
+                    heappush(q, (self.dist[dest], dest))  # キューに新たな仮の距離の情報をpush
                     self.prev[dest] = src
         return self.dist, self.prev
 
