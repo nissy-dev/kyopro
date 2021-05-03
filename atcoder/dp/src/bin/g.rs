@@ -33,6 +33,7 @@ fn main() {
     // dp[i] = 最初に入力辺を持たなかった点からノードiまでの最長パス
     let mut dp = vec![0; n];
     // BFSでノードの並び替え
+    // 最長経路を調べるので、入次数が少ないノードから調べる必要がある
     while queue.len() > 0 {
         let src = queue.pop_front().unwrap();
         for dest in graphs[src].clone() {
