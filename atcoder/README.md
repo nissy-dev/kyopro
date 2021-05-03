@@ -156,8 +156,7 @@ D, E がどっちか解けるまで精進する...
 
 ## ABC 156
 
-急いで出したら、WA だらけだった...  
-CLI 出た!! : https://qiita.com/sachaos/items/37bb4a32ff49ab4a3ac0
+急いで出したら、WA だらけだった...
 
 - B 問題
   - 10 進数 -> n 進数の変換

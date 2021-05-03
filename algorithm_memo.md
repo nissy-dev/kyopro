@@ -32,7 +32,7 @@ https://algo-logic.info/beginner/
 - 最小の要素を見つけて、配列の先頭と入れ替えることを続けるソート
 - 一番思いつきやすいソート
 
-```
+```python
 def selection_sort(arr):
   for i in range(len(arr)):
     min_value = arr[i]
@@ -52,7 +52,7 @@ def selection_sort(arr):
 
 - 隣接する要素の小さい方が前へ、大きい方が後ろに来るように入れ替えながらソート
 
-```
+```python
 def bubble_sort(arr):
   n = len(arr)
   for i in range(n-1):
@@ -66,7 +66,7 @@ def bubble_sort(arr):
 
 - 小さい要素を前に「挿入」するために、他の要素を前に 1 つずつ前にずらしてソート
 
-```
+```python
 def insertion_sort(arr):
   n = len(arr)
   for i in range(1, n):
@@ -89,7 +89,7 @@ def insertion_sort(arr):
 - 基準値(ピボット)を取り出して、小さい要素を左側・大きい要素を右側に移すことを繰り返すソート
 - イメージが掴みやすかった資料 : https://wa3.i-3-i.info/word16752.html
 
-```
+```python
 import random
 
 # 左右から探索して配列を分割
@@ -111,7 +111,7 @@ def partition(arr, l, r):
   return left
 
 def quick_sort(arr, l, r):
-  if l<r:
+  if l < r:
     mid = partition(arr, l, r)
     quick_sort(arr, l, mid-1)
     quick_sort(arr, mid, r)
