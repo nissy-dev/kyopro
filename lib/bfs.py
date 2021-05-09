@@ -29,5 +29,5 @@ class BreadthFirstSearch:
                 for u in self.adj_list[v]:
                     if order[u] >= 0:
                         continue
-                    q.append((u, v, d+1))
+                    q.append((u, v, d + 1))
         return order, parent, depth

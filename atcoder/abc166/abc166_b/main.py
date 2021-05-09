@@ -12,8 +12,8 @@ def get_result(data):
     return N - len(sunuke)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     raw_data = [val.rstrip() for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)

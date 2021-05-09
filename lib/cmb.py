@@ -1,7 +1,7 @@
 from functools import reduce
 
 
-def cmb_mod(n, a, mod=10**9+7):
+def cmb_mod(n, a, mod=10 ** 9 + 7):
     # https://img.atcoder.jp/abc156/editorial.pdf
     # nCk は, k回の積で計算できる
     num = reduce(lambda x, y: x * y % mod, range(n, n - a, -1))
@@ -26,4 +26,4 @@ def cmb(n, r, p, fact, factinv):
     if (r < 0) or (n < r):
         return 0
     r = min(r, n - r)
-    return fact[n] * factinv[r] * factinv[n-r] % p
+    return fact[n] * factinv[r] * factinv[n - r] % p

@@ -31,7 +31,7 @@ class BreadthFirstSearch:
                 for u in self.adj_list[v]:
                     if order[u] >= 0:
                         continue
-                    q.append((u, v, d+1))
+                    q.append((u, v, d + 1))
         return order, parent, depth
 
 
@@ -48,7 +48,7 @@ class Dijkstra:
 
     def distance(self, start):
         # 始点から各頂点までの最短距離を格納する
-        self.dist = [float('inf') for _ in range(self.n)]
+        self.dist = [float("inf") for _ in range(self.n)]
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
@@ -73,7 +73,7 @@ class Dijkstra:
         path = [goal]
         dest = goal
         # 終点から最短経路を逆順に辿る
-        while self.prev[dest] != float('inf'):
+        while self.prev[dest] != float("inf"):
             if self.prev[dest] == -1:
                 break
             path.append(self.prev[dest])
@@ -86,9 +86,9 @@ def get_result(data):
     A = data[1:]
     solver = Dijkstra(N)
     for val in A:
-        solver.add_edge(val[0]-1, val[1]-1, undirected=True)
+        solver.add_edge(val[0] - 1, val[1] - 1, undirected=True)
     _, prev = solver.distance(0)
-    print('Yes')
+    print("Yes")
     for p in prev[1:]:
         print(p + 1)
     return None
@@ -107,8 +107,8 @@ def get_result(data):
 #     return None
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     raw_data = [val.rstrip() for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     get_result(data)
     # print(result)

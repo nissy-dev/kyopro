@@ -3,13 +3,13 @@ class BinarySearch:
     def is_include(self, arr, x):
         left = -1
         right = len(arr) - 1
-        while right-left > 1:
-            mid = left + (right-left)//2
-            if x == arr[mid]:   # xがちょうど中間にあったとき
+        while right - left > 1:
+            mid = left + (right - left) // 2
+            if x == arr[mid]:  # xがちょうど中間にあったとき
                 return mid
             elif x < arr[mid]:  # xが左側の配列にあるとき
                 right = mid
-            else:               # xが右側の配列にあるとき
+            else:  # xが右側の配列にあるとき
                 left = mid
         if x == arr[right]:
             return right

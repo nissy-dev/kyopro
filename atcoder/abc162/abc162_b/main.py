@@ -15,7 +15,7 @@ def get_result(data):
     return sum(ans[ans <= N])
 
 
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip().split(' ')))
+if __name__ == "__main__":
+    data = list(map(int, stdin.readline().rstrip().split(" ")))
     result = get_result(data)
     print(result)

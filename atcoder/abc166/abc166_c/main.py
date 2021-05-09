@@ -6,8 +6,8 @@ def get_result(data):
     H = data[1]
     adj_list = [set() for _ in range(N)]
     for val in data[2:]:
-        adj_list[val[0]-1].add(val[1]-1)
-        adj_list[val[1]-1].add(val[0]-1)
+        adj_list[val[0] - 1].add(val[1] - 1)
+        adj_list[val[1] - 1].add(val[0] - 1)
 
     ans = 0
     for i in range(N):
@@ -24,8 +24,8 @@ def get_result(data):
     return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     raw_data = [val.rstrip() for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)

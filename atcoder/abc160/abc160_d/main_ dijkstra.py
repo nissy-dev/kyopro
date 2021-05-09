@@ -15,7 +15,7 @@ class Dijkstra:
 
     def distance(self, start):
         # 始点から各頂点までの最短距離を格納する
-        self.dist = [float('inf') for _ in range(self.n)]
+        self.dist = [float("inf") for _ in range(self.n)]
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
@@ -40,11 +40,11 @@ class Dijkstra:
 # Dijkstra pypyでAC
 def get_result(data):
     N, X, Y = data
-    _data = [[i, i+1] for i in range(1, N)]
+    _data = [[i, i + 1] for i in range(1, N)]
     _data += [[X, Y]]
     solver = Dijkstra(N)
     for val in _data:
-        solver.add_edge(val[0]-1, val[1]-1, undirected=True)
+        solver.add_edge(val[0] - 1, val[1] - 1, undirected=True)
     dist_cnt = [0 for i in range(N)]
     for i in range(N):
         dist = solver.distance(i)
@@ -54,6 +54,6 @@ def get_result(data):
         print(dist_cnt[i])
 
 
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip('\n').split(' ')))
+if __name__ == "__main__":
+    data = list(map(int, stdin.readline().rstrip("\n").split(" ")))
     get_result(data)

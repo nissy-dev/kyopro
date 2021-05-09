@@ -6,14 +6,14 @@ def get_result(data):
     if A == 0:
         return 0
 
-    remainder = N % (A+B)
+    remainder = N % (A + B)
     tmp = remainder if remainder < A else A
-    quotient = N // (A+B)
+    quotient = N // (A + B)
     ans = A * quotient + tmp
     return ans
 
 
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip('\n').split(' ')))
+if __name__ == "__main__":
+    data = list(map(int, stdin.readline().rstrip("\n").split(" ")))
     result = get_result(data)
     print(result)

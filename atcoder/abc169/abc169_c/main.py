@@ -8,8 +8,8 @@ def get_result(data):
     return math.floor(A * B)
 
 
-if __name__ == '__main__':
-    data = stdin.readline().rstrip().split(' ')
+if __name__ == "__main__":
+    data = stdin.readline().rstrip().split(" ")
     data = [int(data[0]), Decimal(data[1])]
     result = get_result(data)
     print(result)

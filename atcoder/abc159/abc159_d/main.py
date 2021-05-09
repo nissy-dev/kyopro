@@ -22,19 +22,20 @@ from sys import stdin
 #     for i in range(N):
 #         print(ans[A[i]])
 
+
 def get_result(data):
     N = data[0][0]
     A = data[1]
     uniq_cnt = collections.Counter(A)
     all_selection = 0
     for val in uniq_cnt.values():
-        all_selection += int(val * (val-1) / 2)
+        all_selection += int(val * (val - 1) / 2)
 
     for i in range(N):
         print(all_selection - uniq_cnt[A[i]] + 1)
 
 
-if __name__ == '__main__':
-    raw_data = [val.rstrip('\n') for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+if __name__ == "__main__":
+    raw_data = [val.rstrip("\n") for val in stdin.readlines()]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     get_result(data)

@@ -7,7 +7,7 @@ def get_result(data):
     return math.ceil(N / 2.0)
 
 
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().split(' ')))
+if __name__ == "__main__":
+    data = list(map(int, stdin.readline().split(" ")))
     result = get_result(data)
     print(result)

@@ -7,7 +7,7 @@ def validate_num(num, n, sc):
         return False
 
     for s, c in sc:
-        if not num[s-1] == str(c):
+        if not num[s - 1] == str(c):
             return False
 
     return True
@@ -21,11 +21,11 @@ def get_result(data):
         if validate_num(i, N, sc):
             return i
 
-    return '-1'
+    return "-1"
 
 
-if __name__ == '__main__':
-    raw_data = [val.rstrip('\n') for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+if __name__ == "__main__":
+    raw_data = [val.rstrip("\n") for val in stdin.readlines()]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)

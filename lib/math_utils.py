@@ -1,7 +1,7 @@
 # 10進数からn進数への変換
 def base_10_to_n(origin_number, n):
     tmp = origin_number
-    out = ''
+    out = ""
     while tmp > 0:
         out = str(tmp % n) + out
         tmp = int(tmp / n)
@@ -29,7 +29,7 @@ def is_prime(n):
         return False
 
     # nの平方根まで計算する
-    for p in range(3, int(n**0.5)+1, 2):
+    for p in range(3, int(n ** 0.5) + 1, 2):
         if n % p == 0:
             return False
     return True
@@ -41,7 +41,7 @@ def primes(n):
     is_prime = [True] * (n + 1)
     is_prime[0] = False
     is_prime[1] = False
-    for i in range(2, int(n**0.5) + 1):
+    for i in range(2, int(n ** 0.5) + 1):
         if not is_prime[i]:
             continue
         for j in range(i * 2, n + 1, i):
@@ -91,10 +91,10 @@ def prime_factorization_tuple(n):
 # nの約数列挙
 def divisor(n):
     ass = []
-    for i in range(1, int(n**0.5) + 1):
+    for i in range(1, int(n ** 0.5) + 1):
         if n % i == 0:
             ass.append(i)
-            if i**2 == n:
+            if i ** 2 == n:
                 continue
-            ass.append(n//i)
+            ass.append(n // i)
     return ass  # sortされていない

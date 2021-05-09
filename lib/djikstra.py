@@ -14,7 +14,7 @@ class Dijkstra:
 
     def distance(self, start):
         # 始点から各頂点までの最短距離を格納する
-        self.dist = [float('inf') for _ in range(self.n)]
+        self.dist = [float("inf") for _ in range(self.n)]
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
@@ -39,7 +39,7 @@ class Dijkstra:
         path = [goal]
         dest = goal
         # 終点から最短経路を逆順に辿る
-        while self.prev[dest] != float('inf'):
+        while self.prev[dest] != float("inf"):
             if self.prev[dest] == -1:
                 break
             path.append(self.prev[dest])

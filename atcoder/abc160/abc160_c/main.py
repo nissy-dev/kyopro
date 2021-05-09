@@ -7,15 +7,15 @@ def get_result(data):
     tmp = A[0]
     inter_dist = []
     for i in range(1, len(A)):
-        inter_dist.append(A[i]-tmp)
+        inter_dist.append(A[i] - tmp)
         tmp = A[i]
-    inter_dist += [K-A[-1]+A[0]]
+    inter_dist += [K - A[-1] + A[0]]
     ans = sum(inter_dist) - max(inter_dist)
     return ans
 
 
-if __name__ == '__main__':
-    raw_data = [val.rstrip('\n') for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+if __name__ == "__main__":
+    raw_data = [val.rstrip("\n") for val in stdin.readlines()]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)

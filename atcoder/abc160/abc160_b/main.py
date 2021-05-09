@@ -8,7 +8,7 @@ def get_result(data):
     return q * 1000 + q_5 * 5
 
 
-if __name__ == '__main__':
-    data = list(map(int, stdin.readline().rstrip('\n').split(' ')))
+if __name__ == "__main__":
+    data = list(map(int, stdin.readline().rstrip("\n").split(" ")))
     result = get_result(data)
     print(result)

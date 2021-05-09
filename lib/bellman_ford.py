@@ -11,7 +11,7 @@ class BellmanFord:
 
     def distance(self, start):
         # 始点から各頂点までの最短距離を格納する
-        self.dist = [float('inf') for _ in range(self.n)]
+        self.dist = [float("inf") for _ in range(self.n)]
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
@@ -21,7 +21,7 @@ class BellmanFord:
             for src in range(self.n):
                 curr = self.dist[src]
                 for dest, cost in self.adj_list[src]:
-                    if curr != float('inf') and self.dist[dest] > curr + cost:
+                    if curr != float("inf") and self.dist[dest] > curr + cost:
                         self.dist[dest] = curr + cost
                         self.prev[dest] = src
                         end_flag = False
@@ -39,7 +39,7 @@ class BellmanFord:
         path = [goal]
         dest = goal
         # 終点から最短経路を逆順に辿る
-        while self.prev[dest] != float('inf'):
+        while self.prev[dest] != float("inf"):
             path.append(self.prev[dest])
             dest = self.prev[dest]
         return path[::-1]

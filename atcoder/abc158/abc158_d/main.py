@@ -22,11 +22,11 @@ def get_result(data):
     ans = deque(S)
     cnt = 0
     for i in range(Q):
-        if data[i+2][0] == '1':
+        if data[i + 2][0] == "1":
             cnt += 1
         else:
-            F, C = data[i+2][1], data[i+2][2]
-            if F == '1':
+            F, C = data[i + 2][1], data[i + 2][2]
+            if F == "1":
                 if cnt % 2 == 0:
                     # 前に追加
                     ans.appendleft(C)
@@ -38,15 +38,15 @@ def get_result(data):
                 else:
                     ans.appendleft(C)
 
-    ans = ''.join(ans)
+    ans = "".join(ans)
     if cnt % 2 == 1:
         ans = ans[::-1]
 
     return ans
 
 
-if __name__ == '__main__':
-    raw_data = [val.rstrip('\n') for val in stdin.readlines()]
-    data = [list(map(str, val.split(' '))) for val in raw_data]
+if __name__ == "__main__":
+    raw_data = [val.rstrip("\n") for val in stdin.readlines()]
+    data = [list(map(str, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)

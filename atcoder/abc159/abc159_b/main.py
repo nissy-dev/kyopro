@@ -15,12 +15,12 @@ def get_result(data):
     right_S = S[0:right_idx]
     left_S = S[left_idx:]
     if check_palindrome(S) and check_palindrome(right_S) and check_palindrome(left_S):
-        return 'Yes'
+        return "Yes"
 
-    return 'No'
+    return "No"
 
 
-if __name__ == '__main__':
-    data = list(map(str, stdin.readline().rstrip('\n').split(' ')))
+if __name__ == "__main__":
+    data = list(map(str, stdin.readline().rstrip("\n").split(" ")))
     result = get_result(data)
     print(result)

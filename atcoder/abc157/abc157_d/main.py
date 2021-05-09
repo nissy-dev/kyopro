@@ -48,7 +48,9 @@ class UnionFind:
         return {r: self.group_members(r) for r in self.roots()}
 
     def __str__(self):  # print 表示用
-        return '\n'.join('{}: {}'.format(r, self.group_members(r)) for r in self.roots())
+        return "\n".join(
+            "{}: {}".format(r, self.group_members(r)) for r in self.roots()
+        )
 
 
 def get_result(data):
@@ -59,7 +61,7 @@ def get_result(data):
     uf = UnionFind(N)
 
     for i in range(M):
-        A[i], B[i] = data[1+i]
+        A[i], B[i] = data[1 + i]
         # 入力時に 0-index に合わせる
         A[i] -= 1
         B[i] -= 1
@@ -68,7 +70,7 @@ def get_result(data):
         uf.unite(A[i], B[i])
 
     for i in range(K):
-        C[i], D[i] = data[1+M+i]
+        C[i], D[i] = data[1 + M + i]
         # 入力時に 0-index に合わせる
         C[i] -= 1
         D[i] -= 1
@@ -79,11 +81,11 @@ def get_result(data):
     ans = [0] * N
     for i in range(N):
         ans[i] = uf.group_size(i) - len(direct[i]) - 1
-    return ' '.join(list(map(str, ans)))
+    return " ".join(list(map(str, ans)))
 
 
-if __name__ == '__main__':
-    raw_data = [val.rstrip('\n') for val in stdin.readlines()]
-    data = [list(map(int, val.split(' '))) for val in raw_data]
+if __name__ == "__main__":
+    raw_data = [val.rstrip("\n") for val in stdin.readlines()]
+    data = [list(map(int, val.split(" "))) for val in raw_data]
     result = get_result(data)
     print(result)
