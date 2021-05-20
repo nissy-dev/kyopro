@@ -1,0 +1,14 @@
+[package]
+name = "abc131"
+version = "0.1.0"
+authors = ["nissy-dev <nd.12021218@gmail.com>"]
+edition = "2018"
+
+# dependencies added to new project
+[dependencies]
+num = "=0.2.1"
+proconio = { version = "=0.3.6", features = ["derive"] }
+
+[profile.release]
+lto = true
+panic = 'abort'

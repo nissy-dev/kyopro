@@ -10,6 +10,7 @@ def solve(data):
     dp = [[-float("inf") for _ in range(W)] for _ in range(H)]
 
     # ミニマックス法に関連する問題
+    # https://qiita.com/drken/items/4e1bcf8413af16cb62da
     # 降順で回す
     for i in range(H)[::-1]:
         for j in range(W)[::-1]:
