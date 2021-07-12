@@ -18,7 +18,7 @@ class Dijkstra:
         # 最短経路における, その頂点の前の頂点のIDを格納する
         self.prev = [-1 for _ in range(self.n)]
         self.dist[start] = 0
-        # 各要素は，(startからある頂点vまでの仮の距離, 頂点からのID)からなるタプル
+        # 各要素は，(startからある頂点vまでの仮の距離, 頂点のID)からなるタプル
         q = []
         heappush(q, (0, start))
         while len(q) != 0:
