@@ -134,7 +134,7 @@ def quick_sort(arr, l, r):
   - 以上を応用して、平均値の最大化や、最小値の最大化を求めることは多い
   - https://qiita.com/drken/items/2f56925972c1d34e05d8
 
-アルゴリ (lower bound)
+アルゴリズム (lower bound)
 
 > 1. L=-1, R=配列の index の最大値 として以下を繰り返す
 >    1. R-L>1 なら以下を実行する
