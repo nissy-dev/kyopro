@@ -7,8 +7,7 @@ Python で Hashmap のキーには、List, dict, set などの mutable なオブ
 
 参考: [Python における hashable の定義](https://docs.python.org/3/glossary.html#term-hashable)
 
-この理由としては、immutable なオブジェクトだと
-
-## Hashmap のキーを検索する際の計算量が O(1) になる原理
+Hashmap は、key を hash 関数に通して生成された index に値を格納する。
+key が immutable だと index が変わる可能性があるため、index と 値の 1 対 1 対応が崩れて検索が O(1) でできなくなる。
 
 ちなみに、python の set の検索の計算量が O(1) なのは、key に set の要素、value にダミー値を設定した hashmap を内部実装に使っているからである。
