@@ -1,7 +1,7 @@
 from collections import Counter
 
 
-# Sliding Window を使う、考えかたはちょっと近かったけど詳細の解法に落とし込めなかった
+# Sliding Window を使う考え方はちょっと近かったけど詳細の解法に落とし込めなかった
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         chars = Counter()
